@@ -536,6 +536,22 @@ footer {
 }
 
 /* Estilos responsivos */
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1300px; /* Exemplo de ajuste do conteúdo */
+    padding: 0; /* Controle de espaçamento */
+  }
+
+  .banner .destaque {
+    padding-top: 6rem;
+    /* padding-left: 8rem;
+    padding-right: 8rem; */
+    display: flex;
+    justify-content: space-between;
+    /* align-items: flex-end; */
+  }
+}
+
 @media (max-width: 900px) {
   .banner {
     display: flex;
