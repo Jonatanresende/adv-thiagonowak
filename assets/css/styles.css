@@ -1,0 +1,877 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+  font-size: 52px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 22px;
+}
+
+p {
+  font-size: 18px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.btn {
+  padding: 10px 100px;
+  background-color: #61ce70;
+  color: #fff;
+  border: 0;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  animation: pulse 1s infinite;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+  animation: none;
+  background-color: #61ce70;
+  transform: scale(1.05);
+}
+
+/* Animação slide-in para o lado esquerdo */
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Animação slide-in para o lado direito */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Estilo inicial, ocultando os elementos fora da tela */
+.lado-esquerdo,
+.lado-direito {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+/* Quando o elemento está visível */
+.slide-in-left {
+  animation: slideInLeft 2s forwards;
+}
+
+.slide-in-right {
+  animation: slideInRight 2s forwards;
+}
+
+.slide-in-left,
+.slide-in-right {
+  visibility: visible; /* Garante que o elemento fique visível durante a animação */
+}
+
+.card-item {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-100%);
+  transition: opacity 2s ease, transform 2s ease;
+}
+
+.card-item.slide-in-card {
+  visibility: visible; /* Garante que fique visível */
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+img {
+  width: 30px;
+  height: 30px;
+}
+
+.banner {
+  position: relative;
+  height: 100vh;
+  background: rgba(19, 45, 75, 0.8) url("../image/background\ mao.jpg");
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: darken;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.banner .destaque {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: flex-end;
+  position: relative;
+}
+
+.banner .destaque .lado-esquerdo {
+  width: 50%;
+  z-index: 1;
+  padding-bottom: 10rem;
+}
+
+.banner .logo {
+  padding-bottom: 1.5rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.banner .logo img {
+  width: 350px;
+  height: 200px;
+}
+
+.banner h1 {
+  font-weight: 700;
+  line-height: 52px;
+  text-transform: uppercase;
+  color: #fff;
+  padding-bottom: 1.5rem;
+}
+
+.banner .imagem {
+  margin-bottom: 0;
+  align-self: flex-end;
+}
+
+.banner .imagem img {
+  width: 32.5rem;
+  height: auto;
+  display: block;
+}
+
+.intro {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  background-color: #021322;
+  height: 9.125rem;
+}
+
+.intro .card-item {
+  width: 30%;
+  text-align: center;
+  padding: 10px;
+}
+
+.intro .card-item i {
+  font-size: 2rem; /* Tamanho do ícone */
+  color: #c9a487; /* Cor do ícone */
+  margin-bottom: 10px; /* Espaço entre o ícone e o parágrafo */
+  display: block;
+}
+
+.intro .card-item p {
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.informativos .container {
+  display: flex;
+  align-items: center;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  gap: 4rem;
+}
+
+.informativos .lado-esquerdo img {
+  width: 50rem;
+  height: auto;
+  border: 5px solid #c9a487;
+  border-radius: 2rem;
+}
+
+.informativos .lado-direito {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2.3rem;
+}
+
+.informativos .lado-direito h2 {
+  font-weight: 700;
+  line-height: 25px;
+  text-transform: uppercase;
+  color: #c9a487;
+  padding-bottom: 1rem;
+}
+
+.informativos .lado-direito p {
+  text-align: left;
+  font-weight: 400;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #000;
+  padding-bottom: 1rem;
+}
+
+.informativos .lado-direito p span {
+  font-weight: 700;
+  color: #c9a487;
+}
+
+.benefits {
+  text-align: center;
+  padding: 5rem 0;
+  background-color: #021322;
+}
+
+.benefits h2 {
+  color: #c9a487; /* Cor dourada */
+  margin-bottom: 4rem;
+  text-transform: uppercase;
+}
+
+.benefits .cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.benefits .card-item {
+  background-color: #051d33;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  padding-top: 20px;
+  width: 30%;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefits .card-item img {
+  width: 25rem;
+  height: 12rem;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.benefits .card-item h3 {
+  color: #c9a487; /* Cor dourada */
+  margin-bottom: 10px;
+}
+
+.benefits .card-item p {
+  color: #000;
+  align-items: center;
+}
+
+.benefits .card-item:hover {
+  transform: scale(1.05) translateY(-10px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.quem-somos .container {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  gap: 4rem;
+}
+
+.quem-somos .lado-esquerdo img {
+  width: 500px;
+  height: 700px;
+  border: 5px solid #c9a487;
+  border-radius: 2rem;
+}
+
+.quem-somos .lado-direito {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2.3rem;
+}
+
+.quem-somos .lado-direito h2 {
+  font-weight: 700;
+  line-height: 25px;
+  text-transform: uppercase;
+  color: #c9a487;
+  padding-bottom: 3rem;
+}
+
+.quem-somos .lado-direito p {
+  text-align: justify;
+  font-weight: 400;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #000;
+  padding-bottom: 1rem;
+}
+
+.quem-somos .btn {
+  margin-top: 3rem;
+}
+
+.processo {
+  position: relative;
+  height: 100vh;
+  background: rgba(19, 45, 75, 0.8) url("../image/casal-idosos.jpg");
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: darken;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-attachment: fixed; /* Fixa o fundo para efeito parallax */
+}
+
+.processo h2 {
+  color: #c9a487;
+  text-transform: uppercase;
+}
+
+.processo .container {
+  margin: 2rem;
+  padding: 0;
+}
+
+.processo .cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.processo .card-item {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  padding: 40px;
+  width: 30%;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.processo .card-item i {
+  font-size: 48px;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.processo .card-item h3 {
+  color: #c9a487;
+  margin-bottom: 10px;
+}
+
+.processo .card-item p {
+  color: #000;
+  align-items: center;
+}
+
+.processo .card-item:hover {
+  transform: scale(1.05) translateY(-10px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo geral da seção */
+.servicos {
+  background-color: #fff;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+/* Título */
+.servicos h2 {
+  margin-bottom: 30px;
+  color: #c9a487;
+  display: inline-block;
+  padding-bottom: 5px;
+  text-transform: uppercase;
+}
+
+/* Layout dos cartões */
+.servicos .cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  gap: 20px;
+  width: 50rem;
+}
+
+.servicos .card-item {
+  display: flex;
+  align-items: center; /* Para alinhar o ícone com o conteúdo */
+  gap: 10px; /* Ajusta o espaçamento entre o ícone e o conteúdo */
+}
+
+.box-icon {
+  font-size: 52px; /* Tamanho do ícone */
+  margin: 2px;
+}
+
+.box-conteudo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0; /* Remove qualquer padding */
+  margin: 0; /* Remove qualquer margem */
+}
+
+.box-conteudo h3 {
+  color: #c9a487;
+}
+
+.box-conteudo h3,
+.box-conteudo p {
+  margin: 0; /* Remove margens */
+  padding: 0; /* Remove padding */
+  text-align: left; /* Alinha o texto à esquerda */
+}
+
+.contato {
+  background-color: #051d33;
+  padding: 4rem;
+}
+.contato h2 {
+  text-align: center;
+  color: #c9a487;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+}
+.contato .container-area {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.contato .lado-esquerdo {
+  width: 40rem;
+  height: auto;
+}
+
+.contato .lado-direito .dados {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.contato .lado-direito .logo img {
+  width: 20rem;
+  height: 10rem;
+}
+
+.contato .lado-direito i {
+  font-size: 25px;
+}
+
+.contato .lado-direito p {
+  color: #fff;
+}
+
+.contato .lado-direito a {
+  text-decoration: none;
+}
+
+.contato .lado-direito h3 {
+  color: #c9a487;
+}
+
+footer {
+  background-color: #051d33;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #c9a487;
+}
+.copy p {
+  text-align: center;
+  color: #fff;
+  padding-bottom: 0.5rem;
+}
+
+.copy a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* Estilos responsivos */
+@media (max-width: 900px) {
+  .banner {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    background: rgba(19, 45, 75, 0.8) url("../image/background\ mao.jpg");
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: darken;
+  }
+
+  .banner .destaque {
+    padding-top: 2rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .banner .lado-esquerdo {
+    width: 30rem;
+    padding-bottom: 50rem;
+  }
+
+  .banner h1 {
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+  .banner p {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .banner .imagem {
+    padding-top: 15rem;
+  }
+
+  .banner .imagem img {
+    bottom: 0; /* Coloca a imagem diretamente na borda inferior */
+    width: auto; /* Ajusta a largura proporcionalmente */
+    height: 80vh; /* Define uma altura fixa para o homem em telas menores */
+    object-fit: contain; /* Mantém a proporção da imagem */
+    margin: 0;
+    padding: 0;
+  }
+
+  .btn {
+    padding: 10px 50px;
+    font-size: 16px;
+  }
+
+  .informativos .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem;
+    gap: 30px;
+  }
+
+  .informativos .lado-esquerdo img {
+    width: 300px;
+    height: 300px;
+  }
+
+  .informativos .lado-direito h2 {
+    font-size: 20px;
+    line-height: 23px;
+    padding-bottom: 1rem;
+  }
+
+  .informativos .lado-direito h1 {
+    font-size: 25px;
+    line-height: 25px;
+    padding-bottom: 1rem;
+  }
+
+  .informativos .lado-direito p {
+    text-align: left;
+    font-size: 16px;
+    line-height: 24px;
+    padding-bottom: 1rem;
+  }
+
+  .benefits .card-item img {
+    width: 15rem;
+    height: 10rem;
+    margin-bottom: 10px;
+  }
+
+  .quem-somos .container {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 4rem;
+    gap: 30px;
+  }
+
+  .quem-somos .lado-esquerdo img {
+    width: 300px;
+    height: 400px;
+  }
+
+  .quem-somos .lado-direito h1 {
+    font-size: 25px;
+    line-height: 25px;
+    padding-bottom: 1rem;
+  }
+  .processo .card-item {
+    padding: 30px;
+    width: 30%;
+  }
+
+  .contato .lado-esquerdo iframe {
+    width: 23rem;
+    height: 20rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .banner {
+    background-image: none;
+    background-color: #021322;
+  }
+
+  .banner .destaque {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2rem;
+  }
+
+  .banner .logo img {
+    width: 200px;
+    height: 80px;
+  }
+
+  .banner h1 {
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  .banner p {
+    font-size: 10px;
+    line-height: 12px;
+  }
+
+  .banner .destaque .lado-esquerdo {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 0;
+  }
+
+  .banner .imagem {
+    margin: 0;
+    padding: 0;
+  }
+
+  .btn {
+    padding: 8px 50px;
+    font-size: 10px;
+  }
+
+  .intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    height: auto;
+  }
+
+  .intro .card-item {
+    width: 50%;
+  }
+
+  .informativos .container {
+    padding: 2rem;
+  }
+
+  .informativos .lado-esquerdo img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .informativos .lado-direito h2 {
+    font-size: 20px;
+    line-height: 20px;
+    padding-bottom: 1rem;
+  }
+
+  .informativos .lado-direito p {
+    font-size: 14px;
+    padding-bottom: 1rem;
+  }
+
+  .benefits .cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+  }
+
+  .benefits .card-item {
+    width: 80%;
+  }
+
+  .benefits .card-item img {
+    width: 20rem;
+    height: 10rem;
+    margin-bottom: 10px;
+  }
+
+  .quem-somos .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+  }
+
+  .quem-somos .lado-esquerdo img {
+    width: 250px;
+    height: 300px;
+  }
+
+  .quem-somos .lado-direito h2 {
+    font-size: 20px;
+    line-height: 20px;
+    padding-bottom: 1rem;
+  }
+
+  .quem-somos .lado-direito p {
+    font-size: 14px;
+    padding-bottom: 1rem;
+  }
+
+  .processo {
+    height: 100rem;
+    padding: 0 1.3rem;
+  }
+
+  .processo h2 {
+    color: #c9a487;
+    text-align: center;
+  }
+
+  .processo .card-item {
+    padding: 20px;
+    width: 90%;
+  }
+
+  .processo .card-item i {
+    font-size: 40px;
+    font-weight: 900;
+    margin-bottom: 10px;
+  }
+
+  .processo .card-item h3 {
+    color: #c9a487;
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+  }
+
+  .processo .card-item p {
+    color: #555;
+    font-size: 1.4rem;
+    align-items: center;
+  }
+
+  .servicos .cards {
+    width: 100%;
+  }
+
+  .servicos .card-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .servicos .card-item .box-conteudo {
+    align-items: center;
+    text-align: center;
+  }
+
+  .servicos .card-item .box-conteudo p {
+    text-align: center;
+  }
+
+  .contato .lado-direito {
+    width: 20rem;
+  }
+
+  .contato .lado-direito p {
+    font-size: 0.8rem;
+  }
+
+  footer {
+    padding: 2rem;
+    border-top: 1px solid #c9a487;
+  }
+
+  .footer-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 1rem;
+  }
+
+  .footer-area .logo {
+    margin-bottom: 20px;
+  }
+
+  .footer-area .logo img {
+    width: 200px;
+    height: 80px;
+  }
+
+  .footer-area img {
+    width: 10px;
+    height: 10px;
+  }
+
+  footer .copy p {
+    font-size: 0.8rem;
+    padding-bottom: 0.5rem;
+  }
+}
